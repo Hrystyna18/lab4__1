@@ -1,5 +1,6 @@
 package com.example.exception;
 
+
 import com.example.status.HttpStatus;
 
 public class HttpException extends RuntimeException {

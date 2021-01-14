@@ -2,7 +2,7 @@ package com.example.repository;
 
 import com.example.exception.HttpException;
 import com.example.service.Service;
-import org.springframework.http.HttpStatus;
+import com.example.status.HttpStatus;
 import org.springframework.stereotype.Repository;
 import javax.annotation.PostConstruct;
 import java.util.*;
@@ -21,7 +21,7 @@ public class ServiceRepository {
         return services.stream()
                 .filter(item -> item.id == id)
                 .findFirst()
-                .orElseThrow(() -> new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code(), "Service with that id doesn`t exist"));
+                .orElseThrow(() -> new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code, "Service with that id doesn`t exist"));
     }
 
     public List<Service> getServices() {

@@ -1,7 +1,8 @@
 package com.example.service;
 
+
 import com.example.exception.HttpException;
-import org.springframework.http.HttpStatus;
+import com.example.status.HttpStatus;
 
 public class Service {
     public int id;
@@ -18,7 +19,7 @@ public class Service {
         if(id < 0) {
             throw new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code, "id can`t be less than 0!");
         }
-        if(title == "") {
+        if(title.equals("")) {
             throw new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code, "title can`t be empty!");
         }
         if(!title.matches("[A-Za-z]+")) {
