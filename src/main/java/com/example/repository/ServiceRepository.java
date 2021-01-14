@@ -21,7 +21,7 @@ public class ServiceRepository {
         return services.stream()
                 .filter(item -> item.id == id)
                 .findFirst()
-                .orElseThrow(() -> new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code, "Service with that id doesn`t exist"));
+                .orElseThrow(() -> new HttpException(HttpStatus.BAD_REQUEST, HttpStatus.BAD_REQUEST.code(), "Service with that id doesn`t exist"));
     }
 
     public List<Service> getServices() {
